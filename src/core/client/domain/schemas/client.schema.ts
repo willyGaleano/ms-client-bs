@@ -38,8 +38,10 @@ class CustomerGroup {
   group5: string;
 }
 
-@Schema()
-class Client {
+@Schema({
+  versionKey: false,
+})
+export class Client {
   @Prop({ required: true })
   address: string;
 

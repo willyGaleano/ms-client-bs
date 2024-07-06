@@ -33,7 +33,9 @@ class CustomerGroup {
   group5: string;
 }
 
-export class Client {
+export class ClientEntity {
+  @ApiProperty({ description: 'ID' })
+  id: string;
   @ApiProperty({ description: 'Client address' })
   address: string;
   @ApiProperty({ description: 'Blocked' })

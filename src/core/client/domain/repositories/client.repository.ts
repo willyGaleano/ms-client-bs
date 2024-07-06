@@ -1,6 +1,6 @@
-import { Client } from '../entities/client.entity';
+import { ClientDocument } from '../schemas/client.schema';
 
 export interface ClientRepository {
-  getById(id: string): Promise<Client>;
-  seed(): Promise<string>;
+  getById(id: string): Promise<ClientDocument | null>;
+  seed(): Promise<string | null>;
 }

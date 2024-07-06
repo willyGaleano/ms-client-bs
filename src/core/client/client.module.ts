@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Client } from './domain/entities/client.entity';
+import { ClientEntity } from './domain/entities/client.entity';
 import { ClientSchema } from './domain/schemas/client.schema';
 import { CLIENT_REPOSITORY } from './domain/constants';
 import { ClientMongoRepository } from './application/repository/client-mongo.repository';
@@ -9,7 +9,9 @@ import { ClientController } from './infrastructure/controllers/client.controller
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: Client.name, schema: ClientSchema }]),
+    MongooseModule.forFeature([
+      { name: ClientEntity.name, schema: ClientSchema },
+    ]),
   ],
   providers: [
     ClientService,
