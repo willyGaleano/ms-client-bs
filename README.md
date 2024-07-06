@@ -1,73 +1,61 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# MS CLIENT BS
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Instalación y ejecución ⚙️
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- Crear archivo .env usando .env.template
 
-## Description
+  ```bash
+  ENVIRONMENT=LOCAL
+  NODE_ENV=development
+  LOG_LEVEL=debug
+  APP_NAME=ms-client-bs
+  HTTP_PORT=3001
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+  # MongoDB
+  MONGO_INITDB_ROOT_USERNAME=admin
+  MONGO_INITDB_ROOT_PASSWORD=123456
+  MONGO_INITDB_DATABASE=client_db
 
-## Installation
+  MONGO_URI="mongodb://admin:123456@localhost:27017/client_db?authSource=admin"
+  ```
 
-```bash
-$ npm install
-```
+- Instalar dependencias y levantar proyecto
 
-## Running the app
+  ```bash
+  npm i
+  #opcional
+  npm install -g pino-pretty
+  #DB
+  docker-compose up -d
+  #Usando pino-pretty
+  npm run start:dev | pino-pretty
+  #Sin pino-pretty
+  npm run start:dev
+  ```
 
-```bash
-# development
-$ npm run start
+- [Ir a la documentación en Swagger](http://localhost:3001/ms-client-bs/v1/api-docs)
 
-# watch mode
-$ npm run start:dev
+  ![swagger](/etc/docs/images/swagger.png)
+  
+## Endpoints 🚀
 
-# production mode
-$ npm run start:prod
-```
+- Seed
+  ![seed](/etc/docs/images/seed.png)
 
-## Test
+  ![mongo_data](/etc/docs/images/seed_mongo_data.png)
 
-```bash
-# unit tests
-$ npm run test
+- Client Detail
+  ![client-detail](/etc/docs/images/client_detail.png)
 
-# e2e tests
-$ npm run test:e2e
+## Construido con 🛠️
 
-# test coverage
-$ npm run test:cov
-```
+- Nestjs
+- Nodejs v20.15.0
+- Typescript
+- MongoDB
+- Docker
+- Fastify
 
-## Support
+### Autor ✒️
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Williams David Galeano Gomez, <willyrhcp96@gmail.com>
